@@ -16,7 +16,7 @@ export class SearchFormComponent implements OnInit {
     this.initForm();
   }
 
-  private initForm() {
+  private initForm = () => {
     const startLocation = new FormControl('', [
       Validators.required,
     ]);
