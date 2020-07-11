@@ -8,6 +8,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
+import { PricingCardsComponent } from './shared/pricing-cards/pricing-cards.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { SearchFormComponent } from './shared/search-form/search-form.component'
   declarations: [
     SearchPage,
     SearchFormComponent,
+    PricingCardsComponent,
   ]
 })
 export class SearchPageModule {}
