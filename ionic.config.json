@@ -1,0 +1,7 @@
+{
+  "name": "busca-entrega",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
