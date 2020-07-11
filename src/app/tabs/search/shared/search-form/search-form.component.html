@@ -33,7 +33,8 @@
       class="ion-margin-bottom be-action-button be-button--marine-blue"
       expand="block"
       type="submit"
-      [disabled]="form.invalid">
+      [disabled]="form.invalid"
+      (click)="callCalculatePricing()">
       Calcular
     </ion-button>
 </form>

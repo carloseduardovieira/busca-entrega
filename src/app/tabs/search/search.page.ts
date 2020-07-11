@@ -1,3 +1,4 @@
+import { MapsModalComponent } from './shared/maps-modal/maps-modal.component';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -5,6 +6,8 @@ import { CalculatorService } from 'src/app/core/services/calculator/calculator.s
 import { Settings } from 'src/app/core/models/settings.model';
 import { User } from 'src/app/core/models/user.model';
 import { UserService } from './../../core/services/user/user.service';
+import { SearchForm } from './shared/search-form/search-form.model';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-search',
@@ -20,6 +23,7 @@ export class SearchPage implements OnInit, OnDestroy {
 
   constructor(
     private calculatorService:  CalculatorService,
+    private modalCtrl:          ModalController,
     private userService:        UserService,
   ) { }
 
@@ -30,6 +34,18 @@ export class SearchPage implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
+  }
+
+  public onCalculate = async ( coordinates: SearchForm ) => {
+
+    const modal = await this.modalCtrl.create({
+      component: MapsModalComponent,
+      cssClass: 'maps-modal',
+      componentProps: {
+        coordinates
+      }
+    });
+    return await modal.present();
   }
 
   private getSettings = () => {

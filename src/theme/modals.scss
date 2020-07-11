@@ -1,0 +1,9 @@
+.maps-modal {
+  --height: 60vh;
+  .modal-wrapper, .modal-shadow {
+    bottom: 0;
+    position: absolute;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}

@@ -21,5 +21,8 @@
     [settings]="settings">
   </app-pricing-cards>
   
-  <app-search-form></app-search-form>
+  <app-search-form
+    (callCalculate$)="onCalculate($event)">
+
+  </app-search-form>
 </ion-content>

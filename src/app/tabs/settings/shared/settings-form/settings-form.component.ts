@@ -14,7 +14,7 @@ export class SettingsFormComponent implements OnInit {
 
   @Input() settings:          Settings;
   @Input() user:              User;
-  @Output() callSubmitForm =  new EventEmitter<SettingsForm>();
+  @Output() callSubmitForm$ =  new EventEmitter<SettingsForm>();
 
   public form: FormGroup;
 
@@ -32,7 +32,7 @@ export class SettingsFormComponent implements OnInit {
     const form = new SettingsForm();
     form.username = this.form.value.username;
     form.kmPrice = this.form.value.kmPrice;
-    this.callSubmitForm.emit( form );
+    this.callSubmitForm$.emit( form );
   }
 
   private initForm = () => {

@@ -9,6 +9,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import { SearchPage } from './search.page';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
 import { PricingCardsComponent } from './shared/pricing-cards/pricing-cards.component';
+import { MapsModalComponent } from './shared/maps-modal/maps-modal.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,11 @@ import { PricingCardsComponent } from './shared/pricing-cards/pricing-cards.comp
     SearchPage,
     SearchFormComponent,
     PricingCardsComponent,
+    MapsModalComponent,
+  ],
+  providers: [
+    MapsModalComponent,
   ]
+
 })
 export class SearchPageModule {}

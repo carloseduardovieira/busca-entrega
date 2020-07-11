@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { SearchForm } from './search-form.model';
 
 @Component({
   selector: 'app-search-form',
@@ -9,12 +11,21 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class SearchFormComponent implements OnInit {
 
+  @Output() callCalculate$ = new EventEmitter<SearchForm>();
+
   public form: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
     this.initForm();
+  }
+
+  public callCalculatePricing = () => {
+    const search = new SearchForm();
+    search.startLocation = this.form.value.startLocation;
+    search.endLocation = this.form.value.endLocation;
+    this.callCalculate$.emit(search);
   }
 
   private initForm = () => {
@@ -31,4 +42,5 @@ export class SearchFormComponent implements OnInit {
       endLocation,
     });
   }
+
 }
