@@ -4,8 +4,7 @@
     configurações
   </h1>
 
-  <app-settings-form
-    *ngIf="user && settings" 
+  <app-settings-form     
     [settings]="settings"
     [user]="user"
     (callSubmitForm$)="onSubmit($event)">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 import { SettingsForm } from './settings-form.model';
@@ -10,7 +10,7 @@ import { User } from './../../../../core/models/user.model';
   templateUrl: './settings-form.component.html',
   styleUrls: ['./settings-form.component.scss'],
 })
-export class SettingsFormComponent implements OnInit {
+export class SettingsFormComponent implements OnInit, OnChanges {
 
   @Input() settings:          Settings;
   @Input() user:              User;
@@ -20,10 +20,16 @@ export class SettingsFormComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.initForm();
+  ngOnInit() {}
 
-    if ( this.user?.username ) {
+  ngOnChanges( changes: SimpleChanges ) {
+    if ( changes.settings?.currentValue ) {
+      this.settings = changes.settings.currentValue;
+    }
+
+    if ( changes.user?.currentValue ) {
+      this.user = changes.user.currentValue;
+      this.initForm();
       this.initFormValues();
     }
   }
