@@ -1,3 +1,4 @@
+import { Settings } from 'src/app/core/models/settings.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,14 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PricingCardsComponent implements OnInit {
 
-  @Input() userPrice: number;
-  @Input() uberPrice: number;
+  @Input() settings: Settings;
+
+  public userPrice: number;
+  public uberPrice: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.userPrice = 12.00;
-    this.uberPrice = 15.00;
+    this.userPrice = 0;
+    this.uberPrice = 0;
+
   }
 
 }
