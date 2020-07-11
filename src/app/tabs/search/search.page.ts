@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
+  public user = {
+    name: 'Maria',
+  };
+
   constructor() { }
 
   ngOnInit() {
