@@ -25,7 +25,7 @@ import { MapsModalComponent } from './shared/maps-modal/maps-modal.component';
     PricingCardsComponent,
     MapsModalComponent,
   ],
-  providers: [
+  entryComponents: [
     MapsModalComponent,
   ]
 
