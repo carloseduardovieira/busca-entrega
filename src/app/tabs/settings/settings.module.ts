@@ -15,7 +15,7 @@ import { SettingsPage } from './settings.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    SettingsPageRoutingModule
+    SettingsPageRoutingModule,
   ],
   declarations: [
     SettingsPage,

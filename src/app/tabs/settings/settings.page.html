@@ -5,6 +5,9 @@
   </h1>
 
   <app-settings-form
+    *ngIf="user && settings" 
+    [settings]="settings"
+    [user]="user"
     (callSubmitForm)="onSubmit($event)">
 
   </app-settings-form>

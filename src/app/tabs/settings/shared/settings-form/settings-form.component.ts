@@ -1,6 +1,9 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+
 import { SettingsForm } from './settings-form.model';
+import { Settings } from 'src/app/core/models/settings.model';
+import { User } from './../../../../core/models/user.model';
 
 @Component({
   selector: 'app-settings-form',
@@ -9,7 +12,9 @@ import { SettingsForm } from './settings-form.model';
 })
 export class SettingsFormComponent implements OnInit {
 
-  @Output() callSubmitForm = new EventEmitter<SettingsForm>();
+  @Input() settings:          Settings;
+  @Input() user:              User;
+  @Output() callSubmitForm =  new EventEmitter<SettingsForm>();
 
   public form: FormGroup;
 
@@ -17,6 +22,10 @@ export class SettingsFormComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+
+    if ( this.user?.username ) {
+      this.initFormValues();
+    }
   }
 
   public submitForm = () => {
@@ -41,5 +50,10 @@ export class SettingsFormComponent implements OnInit {
       username,
       kmPrice,
     });
+  }
+
+  private initFormValues = () => {
+    this.form.controls[`username`].setValue(this.user.username);
+    this.form.controls[`kmPrice`].setValue(this.settings.kmPrice);
   }
 }

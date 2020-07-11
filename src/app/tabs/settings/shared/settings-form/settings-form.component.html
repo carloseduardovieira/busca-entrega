@@ -33,6 +33,10 @@
     </ion-input>
   </ion-item>
 
+  <p *ngIf="settings?.createdAt" class="message">
+    Última alteração em: {{settings.createdAt | date:'dd/MM/yyyy HH:mm:ss'}}
+  </p>
+  
   <ion-button 
     class="ion-margin-bottom be-action-button be-button--marine-blue"
     expand="block"
