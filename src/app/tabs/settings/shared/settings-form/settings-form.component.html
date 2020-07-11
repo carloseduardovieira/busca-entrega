@@ -1,0 +1,44 @@
+<form *ngIf="form" [formGroup]="form">
+  <ion-item 
+    lines="none"
+    class="ion-no-padding ion-margin-bottom be-input-label">
+    <ion-label 
+      position="floating"
+      color="medium"
+      class="ion-no-padding ion-no-margin"> Informe seu nome </ion-label>
+    <ion-input 
+      type="text"
+      name="username"
+      class="ion-no-margin"
+      formControlName="username"
+      maxlength="25">
+    </ion-input>
+    <p *ngIf="form.get('username').value && form.get('username').invalid" class="error-message"> 
+      Este campo deve conter no máximo 25 caracteres
+    </p>
+  </ion-item>
+
+  <ion-item 
+    lines="none"
+    class="ion-no-padding ion-margin-bottom be-input-label">
+    <ion-label 
+      position="floating"
+      color="medium"
+      class="ion-no-padding ion-no-margin"> Informe o valor a ser cobrado por KM </ion-label>
+    <ion-input 
+      type="number"
+      name="kmPrice"
+      class="ion-no-margin"
+      formControlName="kmPrice">
+    </ion-input>
+  </ion-item>
+
+  <ion-button 
+    class="ion-margin-bottom be-action-button be-button--marine-blue"
+    expand="block"
+    type="submit"
+    [disabled]="form.invalid"
+    (click)="submitForm()">
+    Gravar
+  </ion-button>
+</form>

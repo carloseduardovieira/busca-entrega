@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsForm } from './shared/settings-form/settings-form.model';
 
 @Component({
   selector: 'app-settings',
@@ -12,4 +13,7 @@ export class SettingsPage implements OnInit {
   ngOnInit() {
   }
 
+  public onSubmit = ( form: SettingsForm ) => {
+    console.log(form);
+  }
 }
