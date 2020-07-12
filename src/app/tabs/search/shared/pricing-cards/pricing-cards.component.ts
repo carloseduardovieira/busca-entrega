@@ -16,9 +16,8 @@ export class PricingCardsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.userPrice = 0;
+    this.userPrice = this.settings.kmPrice;
     this.uberPrice = 0;
-
   }
 
 }
