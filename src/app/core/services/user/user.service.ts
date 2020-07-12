@@ -28,8 +28,10 @@ export class UserService {
     }
 
     return from(this.storage.get('be-user').then((user) => {
-      this.user = JSON.parse(user);
-      return this.user;
+      if ( user ) {
+        this.user = JSON.parse(user);
+        return this.user;
+      }
     }));
   }
 }

@@ -10,7 +10,7 @@ import { User } from './../../../../core/models/user.model';
   templateUrl: './settings-form.component.html',
   styleUrls: ['./settings-form.component.scss'],
 })
-export class SettingsFormComponent implements OnInit, OnChanges {
+export class SettingsFormComponent implements OnInit {
 
   @Input() settings:          Settings;
   @Input() user:              User;
@@ -18,18 +18,11 @@ export class SettingsFormComponent implements OnInit, OnChanges {
 
   public form: FormGroup;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
-
-  ngOnChanges( changes: SimpleChanges ) {
-    if ( changes.settings?.currentValue ) {
-      this.settings = changes.settings.currentValue;
-    }
-
-    if ( changes.user?.currentValue ) {
-      this.user = changes.user.currentValue;
-      this.initForm();
+  ngOnInit() {
+    this.initForm();
+    if ( this.user.username ) {
       this.initFormValues();
     }
   }

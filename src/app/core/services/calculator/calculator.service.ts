@@ -28,8 +28,10 @@ export class CalculatorService {
     }
 
     return from( this.storage.get('be-kmPrice').then((settings) => {
-      this.settings = JSON.parse(settings);
-      return this.settings;
+      if ( settings ) {
+        this.settings = JSON.parse(settings);
+        return this.settings;
+      }
     }));
   }
 }

@@ -21,7 +21,10 @@ registerLocaleData(localePt, 'pt');
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: '_beDB',
+      driverOrder: ['localstorage']
+    }),
   ],
   providers: [
     StatusBar,
