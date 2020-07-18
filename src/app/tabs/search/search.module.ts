@@ -1,3 +1,5 @@
+import { MapPriceComponent } from './shared/map-price/map-price.component';
+import { TripComponent } from './shared/trip/trip.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +11,6 @@ import { SearchPageRoutingModule } from './search-routing.module';
 import { SearchPage } from './search.page';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
 import { PricingCardsComponent } from './shared/pricing-cards/pricing-cards.component';
-import { MapsModalComponent } from './shared/maps-modal/maps-modal.component';
 
 @NgModule({
   imports: [
@@ -23,11 +24,8 @@ import { MapsModalComponent } from './shared/maps-modal/maps-modal.component';
     SearchPage,
     SearchFormComponent,
     PricingCardsComponent,
-    MapsModalComponent,
+    TripComponent,
+    MapPriceComponent,
   ],
-  entryComponents: [
-    MapsModalComponent,
-  ]
-
 })
 export class SearchPageModule {}

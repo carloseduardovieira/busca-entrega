@@ -1,0 +1,18 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/search" [text]="'Voltar'"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<section class="content-area">
+  <div class="ion-padding-start ion-padding-end">
+    <app-pricing-cards
+      *ngIf="settings"
+      [settings]="settings">
+    </app-pricing-cards>
+  </div>
+
+  <div class="map" #map></div>
+</section>

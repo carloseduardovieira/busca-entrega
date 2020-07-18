@@ -1,0 +1,19 @@
+<h1 class="welcome-message" *ngIf="user?.username" >
+  Bem vindo(a) de volta, <br>
+  {{user.username}}!
+</h1>
+
+<section *ngIf="!user?.username">
+  <h1 class="welcome-message"  >
+    Seja Bem vindo(a)!
+  </h1>
+  <ion-label>
+    <ion-text color="medium">
+      Vamos te ajudar a calcular o valor de entrega do seu produto.
+    </ion-text>
+  </ion-label>
+</section>
+
+<app-search-form
+  (callCalculate$)="onCalculate($event)">
+</app-search-form>

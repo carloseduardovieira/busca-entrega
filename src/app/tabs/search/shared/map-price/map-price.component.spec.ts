@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MapsModalComponent } from './maps-modal.component';
+import { MapPriceComponent } from './map-price.component';
 
-describe('MapsModalComponent', () => {
-  let component: MapsModalComponent;
-  let fixture: ComponentFixture<MapsModalComponent>;
+describe('MapPriceComponent', () => {
+  let component: MapPriceComponent;
+  let fixture: ComponentFixture<MapPriceComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapsModalComponent ],
+      declarations: [ MapPriceComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MapsModalComponent);
+    fixture = TestBed.createComponent(MapPriceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

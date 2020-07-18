@@ -1,0 +1,35 @@
+.content-area {
+  height: 100%;
+}
+
+.close-modal-area {
+  width: 100%;
+  ion-button {
+    margin: auto;
+  }
+
+  ion-icon{
+    font-size: 4em;
+  }
+}
+
+.map {
+  background-color: transparent;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 150ms ease-in;
+  width: 100%;
+}
+
+.map.visible {
+  opacity: 1;
+}
+
+.content-area {
+  height: 100vh;
+
+  ion-row {
+    height: 100%;
+  }
+}
