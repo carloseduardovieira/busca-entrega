@@ -1,11 +1,10 @@
+import { environment } from './../../../../environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapsService {
-
-  private GOOGLE_API_KEY = 'AIzaSyBUjiUjw9dLYDQgXPhaOsPTCs_O20qI5aA';
 
   constructor() { }
 
@@ -17,7 +16,7 @@ export class MapsService {
     }
     return new Promise( (resolve, reject) => {
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${this.GOOGLE_API_KEY}`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${environment.GOOGLE_API_KEY}`;
       script.async = true;
       script.defer = true;
       document.body.appendChild(script);
